@@ -3,12 +3,13 @@ using BackEndChallenge.Model;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
 namespace BackEndChallenge.Service
 {
     public class UsuarioService : IUsuarioService
     {
-        public UsuarioResponse ValidarSenha(string senha)
+        public async Task<UsuarioResponse> ValidarSenha(string senha)
         {
             var retornoFalso = new UsuarioResponse()
             {

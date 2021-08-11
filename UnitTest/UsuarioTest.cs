@@ -9,58 +9,58 @@ namespace UnitTest
         IUsuarioService _service = new UsuarioService();
 
         [Fact]
-        public void Usuario_ValidaSenha_Sucesso()
+        public async void Usuario_ValidaSenha_Sucesso()
         {
-            var response = _service.ValidarSenha("AbTp9!fok");
+            var response = await _service.ValidarSenha("AbTp9!fok");
             Assert.True(response.IsValid);
         }
 
         [Fact]
-        public void Usuario_ValidaSenha_Erro_Vazio()
+        public async void Usuario_ValidaSenha_Erro_Teste1()
         {
-            var response = _service.ValidarSenha("");
+            var response = await _service.ValidarSenha("");
             Assert.False(response.IsValid);
         }
 
         [Fact]
-        public void Usuario_ValidaSenha_MinimoCaracteres()
+        public async void Usuario_ValidaSenha_Erro_Teste2()
         {
-            var response = _service.ValidarSenha("abcdefgh");
+            var response = await  _service.ValidarSenha("aa");
             Assert.False(response.IsValid);
         }
 
         [Fact]
-        public void Usuario_ValidaSenha_Erro_()
+        public async void Usuario_ValidaSenha_Erro_Teste3()
         {
-            var response = _service.ValidarSenha("ab");
+            var response = await _service.ValidarSenha("ab");
             Assert.False(response.IsValid);
         }
 
         [Fact]
-        public void Usuario_ValidaSenha_Erro_Teste4()
+        public async void Usuario_ValidaSenha_Erro_Teste4()
         {
-            var response = _service.ValidarSenha("AAAbbbCc");
+            var response = await _service.ValidarSenha("AAAbbbCc");
             Assert.False(response.IsValid);
         }
 
         [Fact]
-        public void Usuario_ValidaSenha_Erro_Teste5()
+        public async void Usuario_ValidaSenha_Erro_Teste5()
         {
-            var response = _service.ValidarSenha("AbTp9!foo");
+            var response = await _service.ValidarSenha("AbTp9!foo");
             Assert.False(response.IsValid);
         }
 
         [Fact]
-        public void Usuario_ValidaSenha_Erro_Teste6()
+        public async void Usuario_ValidaSenha_Erro_Teste6()
         {
-            var response = _service.ValidarSenha("AbTp9!foA");
+            var response = await _service.ValidarSenha("AbTp9!foA");
             Assert.False(response.IsValid);
         }
 
         [Fact]
-        public void Usuario_ValidaSenha_Erro_Teste7()
+        public async void Usuario_ValidaSenha_Erro_Teste7()
         {
-            var response = _service.ValidarSenha("AbTp9 fok");
+            var response = await _service.ValidarSenha("AbTp9 fok");
             Assert.False(response.IsValid);
         }
     }

@@ -1,9 +1,10 @@
 ﻿using BackEndChallenge.Model;
+using System.Threading.Tasks;
 
 namespace BackEndChallenge.Interface
 {
     public interface IUsuarioService
     {
-        UsuarioResponse ValidarSenha(string senha);
+        Task<UsuarioResponse> ValidarSenha(string senha);
     }
 }

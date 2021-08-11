@@ -1,5 +1,6 @@
 ﻿using BackEndChallenge.Interface;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace BackEndChallenge.Controller
 {
@@ -14,9 +15,9 @@ namespace BackEndChallenge.Controller
         }
 
         [HttpGet("validarSenha")]
-        public IActionResult ValidarSenha([FromQuery] string senha)
+        public async Task<IActionResult> ValidarSenha([FromQuery] string senha)
         {
-            var response = _usuarioService.ValidarSenha(senha);
+            var response =  await _usuarioService.ValidarSenha(senha);
             return new ObjectResult(response) { StatusCode = response.StatusCode };
         }
     }
