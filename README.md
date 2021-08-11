@@ -7,13 +7,13 @@
 
 ## Instalação e restauração de pacotes:
 
-Abra o console, navegue até a pasta <b>__BackEndChallenge__</b> e digite o seguinte comando:
+Abra uma console, navegue até a pasta <b>__BackEndChallenge__</b> e digite o seguinte comando:
 ### `dotnet restore`<br /><br />
 
 
 ## Execução:
 
-A partir da pasta root, navegue até a pasta <b>__API__</b> e execute o seguinte comando na pasta do repositório:
+A partir da pasta <b>__BackEndChallenge__</b>, navegue até a pasta <b>__API__</b> e execute o seguinte comando:
 ### `dotnet run` <br />
 
 A API deverá estar rodando em neste endereço:
@@ -22,11 +22,11 @@ A API deverá estar rodando em neste endereço:
 
 ## Testes unitários:
 
-Com a API rodando, abra o console, a partir da pasta root navegue até a pasta <b>__UnitTest__</b> e execute o seguinte comando:
+Com a API rodando, abra uma console, a partir da pasta <b>__BackEndChallenge__</b> navegue até a pasta <b>__UnitTest__</b> e execute o seguinte comando:
 ### `dotnet test`<br />
 
 
 ## Testes de integração:
 
-Com a API rodando, abra o console, a partir da pasta root navegue até a pasta <b>__IntegrationTest__</b> e execute o seguinte comando:
+Com a API rodando, abra uma console, a partir da pasta <b>__BackEndChallenge__</b> navegue até a pasta <b>__IntegrationTest__</b> e execute o seguinte comando:
 ### `dotnet test`<br />
