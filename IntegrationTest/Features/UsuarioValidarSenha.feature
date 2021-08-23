@@ -12,10 +12,10 @@ Esquema do Cenário: Validação de senhas
 	Exemplos:
 		| Senha			| Valido |	
 		| ""			| não	 |
-		| aa			| não    |
-		| ab			| não	 |
-		| AAAbbbCc		| não    |
-		| AbTp9!foo		| não    |
-		| AbTp9!foA		| não    |
-		| AbTp9 fok		| não    |
-		| AbTp9!fok		| sim    |
+		| AbCd1!Ef		| não    |
+		| ABCD1!EFG		| não	 |
+		| abcd1!egf		| não    |
+		| AbCd!EfGh		| não    |
+		| AbCd 1!EfG	| não    |
+		| AbCd1!EfA		| não    |
+		| AbCd1!EfG		| sim    |

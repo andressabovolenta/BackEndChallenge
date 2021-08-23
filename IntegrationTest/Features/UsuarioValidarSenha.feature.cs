@@ -84,13 +84,13 @@ namespace IntegrationTest.Features
         [Xunit.TraitAttribute("FeatureTitle", "UsuarioValidarSenha")]
         [Xunit.TraitAttribute("Description", "Validação de senhas")]
         [Xunit.InlineDataAttribute("\"\"", "não", new string[0])]
-        [Xunit.InlineDataAttribute("aa", "não", new string[0])]
-        [Xunit.InlineDataAttribute("ab", "não", new string[0])]
-        [Xunit.InlineDataAttribute("AAAbbbCc", "não", new string[0])]
-        [Xunit.InlineDataAttribute("AbTp9!foo", "não", new string[0])]
-        [Xunit.InlineDataAttribute("AbTp9!foA", "não", new string[0])]
-        [Xunit.InlineDataAttribute("AbTp9 fok", "não", new string[0])]
-        [Xunit.InlineDataAttribute("AbTp9!fok", "sim", new string[0])]
+        [Xunit.InlineDataAttribute("AbCd1!Ef", "não", new string[0])]
+        [Xunit.InlineDataAttribute("ABCD1!EFG", "não", new string[0])]
+        [Xunit.InlineDataAttribute("abcd1!egf", "não", new string[0])]
+        [Xunit.InlineDataAttribute("AbCd!EfGh", "não", new string[0])]
+        [Xunit.InlineDataAttribute("AbCd 1!EfG", "não", new string[0])]
+        [Xunit.InlineDataAttribute("AbCd1!EfA", "não", new string[0])]
+        [Xunit.InlineDataAttribute("AbCd1!EfG", "sim", new string[0])]
         public virtual void ValidacaoDeSenhas(string senha, string valido, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;

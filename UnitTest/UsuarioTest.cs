@@ -11,56 +11,56 @@ namespace UnitTest
         [Fact]
         public async void Usuario_ValidaSenha_Sucesso()
         {
-            var response = await _service.ValidarSenha("AbTp9!fok");
+            var response = await _service.ValidarSenha("AbCd1!EfG");
             Assert.True(response.IsValid);
         }
 
         [Fact]
-        public async void Usuario_ValidaSenha_Erro_Teste1()
+        public async void Usuario_ValidaSenha_Erro_SenhaNula()
         {
             var response = await _service.ValidarSenha("");
             Assert.False(response.IsValid);
         }
 
         [Fact]
-        public async void Usuario_ValidaSenha_Erro_Teste2()
+        public async void Usuario_ValidaSenha_Erro_MenosQueNoveCaracteres()
         {
-            var response = await  _service.ValidarSenha("aa");
+            var response = await  _service.ValidarSenha("AbCd1!Ef");
             Assert.False(response.IsValid);
         }
 
         [Fact]
-        public async void Usuario_ValidaSenha_Erro_Teste3()
+        public async void Usuario_ValidaSenha_Erro_SemLetraMinuscula()
         {
-            var response = await _service.ValidarSenha("ab");
+            var response = await _service.ValidarSenha("ABCD1!EFG");
             Assert.False(response.IsValid);
         }
 
         [Fact]
-        public async void Usuario_ValidaSenha_Erro_Teste4()
+        public async void Usuario_ValidaSenha_Erro_SemLetraMaiuscula()
         {
-            var response = await _service.ValidarSenha("AAAbbbCc");
+            var response = await _service.ValidarSenha("abcd1!egf");
             Assert.False(response.IsValid);
         }
 
         [Fact]
-        public async void Usuario_ValidaSenha_Erro_Teste5()
+        public async void Usuario_ValidaSenha_Erro_SemDigitoDecimal()
         {
-            var response = await _service.ValidarSenha("AbTp9!foo");
+            var response = await _service.ValidarSenha("AbCd!EfGh");
             Assert.False(response.IsValid);
         }
 
         [Fact]
-        public async void Usuario_ValidaSenha_Erro_Teste6()
+        public async void Usuario_ValidaSenha_Erro_EspacoEmBranco()
         {
-            var response = await _service.ValidarSenha("AbTp9!foA");
+            var response = await _service.ValidarSenha("AbCd 1!EfG");
             Assert.False(response.IsValid);
         }
 
         [Fact]
-        public async void Usuario_ValidaSenha_Erro_Teste7()
+        public async void Usuario_ValidaSenha_Erro_CaractereRepetido()
         {
-            var response = await _service.ValidarSenha("AbTp9 fok");
+            var response = await _service.ValidarSenha("AbCd1!EfA");
             Assert.False(response.IsValid);
         }
     }
